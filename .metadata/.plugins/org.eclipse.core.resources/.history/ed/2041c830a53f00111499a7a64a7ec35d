@@ -22,8 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
-#include <stdarg.h>
-#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BL_DEBUG_MSG_EN
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,9 +49,8 @@ UART_HandleTypeDef huart3;
 
 
 /* USER CODE BEGIN PV */
-#define C_UART   &huart2
-#define D_UART   &huart3
-
+UART_handleTypeDef *C_UART = &huart2;
+UART_handleTypeDef *D_UART = &huart3;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,7 +60,7 @@ static void MX_CRC_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-void printmsg(char *format,...);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -113,12 +110,9 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-	  // HAL_UART_Transmit(&huart2,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
-	  // HAL_UART_Transmit(&huart3,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
-
+	  //HAL_UART_Transmit(&huart2,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart3,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
 	  uint32_t current_tick = HAL_GetTick();
-	  printmsg("current_tick =%d\r\n",current_tick);
-
 	  while((HAL_GetTick() <= current_tick + 1000));
 
     /* USER CODE BEGIN 3 */
@@ -315,8 +309,8 @@ void printmsg(char *format,...)
  /*Extract the argument list using VA api's*/
  va_list args;
  va_start(args,format);
- vsprintf(str, format,args);
- HAL_UART_Transmit(D_UART, (uint8_t*)str , strlen(str),HAL_MAX_DELAY);
+ vsprintf(str,format,args);
+ HAL_UART_Transmit(D_UART, (uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
  va_end(args);
 #endif
 

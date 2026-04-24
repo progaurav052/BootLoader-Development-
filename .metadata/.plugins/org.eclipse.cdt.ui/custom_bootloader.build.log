@@ -1,10 +1,10 @@
-11:31:57 **** Incremental Build of configuration Debug for project custom_bootloader ****
+11:57:31 **** Incremental Build of configuration Debug for project custom_bootloader ****
 make -j10 all 
 arm-none-eabi-size  custom_bootloader.elf 
    text	   data	    bss	    dec	    hex	filename
-   9576	     16	   1720	  11312	   2c30	custom_bootloader.elf
+  12240	     92	   2052	  14384	   3830	custom_bootloader.elf
 Finished building: default.size.stdout
  
 
-11:31:57 Build Finished. 0 errors, 0 warnings. (took 157ms)
+11:57:31 Build Finished. 0 errors, 0 warnings. (took 169ms)
 
