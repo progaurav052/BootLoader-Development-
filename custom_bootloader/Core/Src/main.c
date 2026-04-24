@@ -80,6 +80,7 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
+	//note : this is an bootloader code
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -107,22 +108,22 @@ int main(void)
   //HAL_UART_Transmit(&huart2,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
   /* USER CODE END 2 */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
+
+  /* USER CODE BEGIN 3 */
+
+  //in nucleo board pressing the user button makes it ground , it is different in disc board
+  if(HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin) == GPIO_PIN_RESET)
   {
-    /* USER CODE END WHILE */
-
-	  // HAL_UART_Transmit(&huart2,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
-	  // HAL_UART_Transmit(&huart3,(uint8_t*)msg , strlen(msg),HAL_MAX_DELAY);
-
-	  uint32_t current_tick = HAL_GetTick();
-	  printmsg("current_tick =%d\r\n",current_tick);
-
-	  while((HAL_GetTick() <= current_tick + 1000));
-
-    /* USER CODE BEGIN 3 */
+	  // we should continue in bootloader mode
+	  printmsg("BL_DEBUG_MSG:Button is pressed .. going to BL mode\n\r");
+	  bootloader_uart_read_data();
   }
+  else
+  {
+	  printmsg("BL_DEBUG_MSG:Button is not pressed .. executing user application\n\r");
+	  bootloader_jump_to_user_app();
+  }
+
   /* USER CODE END 3 */
 }
 
@@ -305,6 +306,43 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void bootloader_uart_read_data(void){
+
+}
+
+void bootloader_jump_to_user_app(void) {
+
+  //just a function pointer to hold the address of the reset handler of the user app.
+  void (*app_reset_handler)(void);
+
+  printmsg("BL_DEBUG_MSG:bootloader_jump_to_user_app\n");
+
+
+  // 1. configure the MSP by reading the value from the base address of the sector 2
+  uint32_t msp_value = *(volatile uint32_t *)FLASH_SECTOR2_BASE_ADDRESS;
+  printmsg("BL_DEBUG_MSG:MSP value : %#x\n",msp_value);
+
+  //This function comes from CMSIS.
+  __set_MSP(msp_value);
+
+  //SCB->VTOR = FLASH_SECTOR1_BASE_ADDRESS;
+
+  /* 2. Now fetch the reset handler address of the user application
+   * from the location FLASH_SECTOR2_BASE_ADDRESS+4
+   */
+  uint32_t resethandler_address = *(volatile uint32_t *) (FLASH_SECTOR2_BASE_ADDRESS + 4);
+
+  app_reset_handler = (void*) resethandler_address;
+
+  printmsg("BL_DEBUG_MSG: app reset handler addr : %#x\n",app_reset_handler);
+
+  //3. jump to reset handler of the user application
+  app_reset_handler();
+
+}
+
+
 
 /*printf formateed string to console over UART*/
 void printmsg(char *format,...)

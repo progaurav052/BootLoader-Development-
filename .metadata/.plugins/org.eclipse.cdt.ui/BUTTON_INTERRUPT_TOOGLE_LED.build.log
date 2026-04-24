@@ -1,0 +1,10 @@
+18:50:07 **** Incremental Build of configuration Debug for project BUTTON_INTERRUPT_TOOGLE_LED ****
+make -j10 all 
+arm-none-eabi-size  BUTTON_INTERRUPT_TOOGLE_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9488	     16	   1648	  11152	   2b90	BUTTON_INTERRUPT_TOOGLE_LED.elf
+Finished building: default.size.stdout
+ 
+
+18:50:07 Build Finished. 0 errors, 0 warnings. (took 173ms)
+
