@@ -1,0 +1,251 @@
+2026-04-24 00:00:26,849 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:00:26,915 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:00:26,957 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:00:37,023 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:00:37,068 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:00:37,166 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:01:06,782 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:01:06,833 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:01:06,880 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:01:42,976 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:01:43,130 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:01:43,185 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:04,699 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:04,744 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:04,831 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:18,712 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:18,825 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:18,928 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:33,442 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:33,491 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:33,536 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:02:59,145 [INFO] Activator:176 - 
+
+
+2026-04-24 00:02:59,147 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-24 00:03:03,667 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-24 00:03:03,975 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-04-24 00:03:05,214 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-24 00:03:05,721 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:05,759 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:05,797 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:05,873 [INFO] ApplicationProperties:184 - Using Application install path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659
+2026-04-24 00:03:05,885 [INFO] DbMcusXml:78 - Set database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//mcu/
+2026-04-24 00:03:05,885 [INFO] ApiDb:274 - Set plugin database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//plugins/boardmanager/
+2026-04-24 00:03:05,886 [WARN] ApiDb:259 - Overriding images path with different value:  => /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//plugins/mcufinder/images/
+2026-04-24 00:03:05,892 [INFO] ApiDb:250 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/
+2026-04-24 00:03:05,893 [INFO] DbMcusAds:125 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/
+2026-04-24 00:03:05,895 [INFO] CrossReferenceDbSqlite:203 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/cs/
+2026-04-24 00:03:06,284 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2026-04-24 00:03:06,367 [INFO] DbMcusXml:78 - Set database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//mcu/
+2026-04-24 00:03:06,367 [INFO] ApiDb:274 - Set plugin database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//plugins/boardmanager/
+2026-04-24 00:03:06,368 [INFO] ApiDb:261 - Set plugin images path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//plugins/mcufinder/images/
+2026-04-24 00:03:06,369 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,369 [INFO] ApiDb:250 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/
+2026-04-24 00:03:06,369 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,369 [INFO] DbMcusAds:125 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/
+2026-04-24 00:03:06,369 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,369 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,370 [INFO] CrossReferenceDbSqlite:203 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/cs/
+2026-04-24 00:03:06,444 [INFO] MainPanel:274 - HeapMemory: 268435456
+2026-04-24 00:03:06,944 [INFO] DbMcusXml:78 - Set database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//mcu/
+2026-04-24 00:03:06,944 [INFO] ApiDb:274 - Set plugin database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//plugins/boardmanager/
+2026-04-24 00:03:06,944 [INFO] ApiDb:261 - Set plugin images path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659//db//plugins/mcufinder/images/
+2026-04-24 00:03:06,945 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,945 [INFO] ApiDb:250 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/
+2026-04-24 00:03:06,945 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,945 [INFO] DbMcusAds:125 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/
+2026-04-24 00:03:06,945 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,945 [WARN] DbFile:41 - Overriding database path with different value: /Users/ggpai/.stmcufinder/plugins/mcufinder/ => /Users/ggpai/.stmcufinder/plugins/mcufinder
+2026-04-24 00:03:06,945 [INFO] CrossReferenceDbSqlite:203 - Set database path to: /Users/ggpai/.stmcufinder/plugins/mcufinder//mcu/cs/
+2026-04-24 00:03:06,968 [INFO] ApplicationProperties:184 - Using Application install path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659
+2026-04-24 00:03:06,970 [INFO] PluginManage:196 - Search for loadable plugins [exclusion list=, ]
+2026-04-24 00:03:06,972 [INFO] PluginManage:310 - Check plugin analytics
+2026-04-24 00:03:07,200 [INFO] AnalyticsPlugin:253 - Accepted Software Licenses: STM32CubeMX.6.17.0
+2026-04-24 00:03:07,201 [INFO] AnalyticsPlugin:255 - Accepted CMSIS Pack Licenses: 
+2026-04-24 00:03:07,201 [INFO] AnalyticsPlugin:257 - Accepted Firmware Licenses: 
+2026-04-24 00:03:07,213 [INFO] PluginManage:359 - Loaded plugin analytics (category:tool,tabindex:-1)
+2026-04-24 00:03:07,218 [INFO] PluginManage:310 - Check plugin cadmodel
+2026-04-24 00:03:07,249 [INFO] CADModel:105 - Init CAD model plugin
+2026-04-24 00:03:07,249 [INFO] PluginManage:359 - Loaded plugin cadmodel (category:power,tabindex:5)
+2026-04-24 00:03:07,250 [INFO] PluginManage:310 - Check plugin clock
+2026-04-24 00:03:07,261 [INFO] PluginManage:359 - Loaded plugin clock (category:base,tabindex:2)
+2026-04-24 00:03:07,261 [INFO] PluginManage:310 - Check plugin ddr
+2026-04-24 00:03:07,263 [INFO] PluginManage:359 - Loaded plugin ddr (category:tool,tabindex:6)
+2026-04-24 00:03:07,264 [INFO] PluginManage:310 - Check plugin filemanager
+2026-04-24 00:03:07,303 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:07,346 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:07,389 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:07,426 [INFO] PluginManage:359 - Loaded plugin filemanager (category:base,tabindex:10)
+2026-04-24 00:03:07,426 [INFO] PluginManage:310 - Check plugin ipmanager
+2026-04-24 00:03:07,435 [INFO] PluginManage:359 - Loaded plugin ipmanager (category:base,tabindex:5)
+2026-04-24 00:03:07,435 [INFO] PluginManage:310 - Check plugin lpbam
+2026-04-24 00:03:07,442 [INFO] PluginManage:359 - Loaded plugin lpbam (category:base,tabindex:0)
+2026-04-24 00:03:07,442 [INFO] PluginManage:310 - Check plugin memorymap
+2026-04-24 00:03:07,453 [INFO] PluginManage:359 - Loaded plugin memorymap (category:base,tabindex:4)
+2026-04-24 00:03:07,453 [INFO] PluginManage:310 - Check plugin pinoutandconfiguration
+2026-04-24 00:03:07,462 [INFO] PluginManage:359 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2026-04-24 00:03:07,462 [INFO] PluginManage:310 - Check plugin pinoutconfig
+2026-04-24 00:03:07,552 [WARN] SupportedApi:132 - Cannot load RTOS API schema: s4s-elt-must-match.1: The content of 'definitions' must match (annotation?, (simpleType | complexType)?, (unique | key | keyref)*)). A problem was found starting at: attribute.
+2026-04-24 00:03:07,709 [INFO] PluginManage:359 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2026-04-24 00:03:07,709 [INFO] PluginManage:310 - Check plugin power
+2026-04-24 00:03:07,718 [INFO] PluginManage:359 - Loaded plugin power (category:power,tabindex:4)
+2026-04-24 00:03:07,718 [INFO] PluginManage:310 - Check plugin projectmanager
+2026-04-24 00:03:07,736 [INFO] PluginManage:359 - Loaded plugin projectmanager (category:projectmanager,tabindex:4)
+2026-04-24 00:03:07,736 [INFO] PluginManage:310 - Check plugin rif
+2026-04-24 00:03:07,742 [INFO] PluginManage:359 - Loaded plugin rif (category:base,tabindex:3)
+2026-04-24 00:03:07,743 [INFO] PluginManage:310 - Check plugin thirdparty
+2026-04-24 00:03:07,887 [INFO] PluginManage:359 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2026-04-24 00:03:07,888 [INFO] PluginManage:310 - Check plugin tools
+2026-04-24 00:03:07,887 [WARN] IntegrityCheckThread:84 - waiting for thirdparty lock release [integrity check]
+2026-04-24 00:03:07,890 [INFO] IntegrityCheckThread:86 - entering critical section [integrity check]
+2026-04-24 00:03:07,891 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [1/15]
+2026-04-24 00:03:07,892 [INFO] PluginManage:359 - Loaded plugin tools (category:base,tabindex:7)
+2026-04-24 00:03:07,892 [INFO] PluginManage:310 - Check plugin tutovideos
+2026-04-24 00:03:08,047 [INFO] PluginManage:359 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2026-04-24 00:03:08,047 [INFO] PluginManage:310 - Check plugin updater
+2026-04-24 00:03:08,076 [INFO] PluginManage:359 - Loaded plugin updater (category:base,tabindex:12)
+2026-04-24 00:03:08,076 [INFO] PluginManage:310 - Check plugin userauth
+2026-04-24 00:03:08,081 [INFO] UserAuth:118 - Init User Auth plugin
+2026-04-24 00:03:08,082 [INFO] PluginManage:359 - Loaded plugin userauth (category:base,tabindex:14)
+2026-04-24 00:03:08,083 [INFO] PluginManage:283 - PluginManage : Loaded plugins [18]
+2026-04-24 00:03:08,292 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2026-04-24 00:03:08,366 [INFO] CADModel:165 - CPN selected for project level
+2026-04-24 00:03:08,366 [INFO] CADModel:114 - Register for checkConnection events
+2026-04-24 00:03:08,375 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,375 [INFO] PluginManager:220 - loadIPPluginJar : add mdma
+2026-04-24 00:03:08,380 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,380 [INFO] PluginManager:220 - loadIPPluginJar : add freertos
+2026-04-24 00:03:08,384 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,384 [INFO] PluginManager:220 - loadIPPluginJar : add gic
+2026-04-24 00:03:08,390 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,390 [INFO] PluginManager:220 - loadIPPluginJar : add adc
+2026-04-24 00:03:08,391 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,391 [INFO] PluginManager:220 - loadIPPluginJar : add gtzc
+2026-04-24 00:03:08,392 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,392 [INFO] PluginManager:220 - loadIPPluginJar : add quadspi
+2026-04-24 00:03:08,393 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,393 [INFO] PluginManager:220 - loadIPPluginJar : add aes
+2026-04-24 00:03:08,394 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,394 [INFO] PluginManager:220 - loadIPPluginJar : add pdm2pcm
+2026-04-24 00:03:08,395 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,395 [INFO] PluginManager:220 - loadIPPluginJar : add hash
+2026-04-24 00:03:08,397 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,397 [INFO] PluginManager:220 - loadIPPluginJar : add tim
+2026-04-24 00:03:08,398 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,398 [INFO] PluginManager:220 - loadIPPluginJar : add tsc
+2026-04-24 00:03:08,400 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,400 [INFO] PluginManager:220 - loadIPPluginJar : add extmemmanager
+2026-04-24 00:03:08,400 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,401 [INFO] PluginManager:220 - loadIPPluginJar : add ts
+2026-04-24 00:03:08,401 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,402 [INFO] PluginManager:220 - loadIPPluginJar : add radio
+2026-04-24 00:03:08,403 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,403 [INFO] PluginManager:220 - loadIPPluginJar : add can
+2026-04-24 00:03:08,404 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,404 [INFO] PluginManager:220 - loadIPPluginJar : add dma3
+2026-04-24 00:03:08,405 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,405 [INFO] PluginManager:220 - loadIPPluginJar : add dfsdm
+2026-04-24 00:03:08,406 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,406 [INFO] PluginManager:220 - loadIPPluginJar : add spi
+2026-04-24 00:03:08,407 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,408 [INFO] PluginManager:220 - loadIPPluginJar : add gfxmmu
+2026-04-24 00:03:08,408 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,408 [INFO] PluginManager:220 - loadIPPluginJar : add genericplugin
+2026-04-24 00:03:08,409 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,409 [INFO] PluginManager:220 - loadIPPluginJar : add cryp
+2026-04-24 00:03:08,412 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,412 [INFO] PluginManager:220 - loadIPPluginJar : add gpio
+2026-04-24 00:03:08,414 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,415 [INFO] PluginManager:220 - loadIPPluginJar : add ddr_ctrl_phy
+2026-04-24 00:03:08,416 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,416 [INFO] PluginManager:220 - loadIPPluginJar : add comp
+2026-04-24 00:03:08,418 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,418 [INFO] PluginManager:220 - loadIPPluginJar : add tracer_emb
+2026-04-24 00:03:08,419 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,419 [INFO] PluginManager:220 - loadIPPluginJar : add openamp
+2026-04-24 00:03:08,422 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,422 [INFO] PluginManager:220 - loadIPPluginJar : add stm32_wpan
+2026-04-24 00:03:08,425 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,426 [INFO] PluginManager:220 - loadIPPluginJar : add plateformsettings
+2026-04-24 00:03:08,428 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,428 [INFO] PluginManager:220 - loadIPPluginJar : add ipddr
+2026-04-24 00:03:08,430 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,430 [INFO] PluginManager:220 - loadIPPluginJar : add usart
+2026-04-24 00:03:08,431 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,431 [INFO] PluginManager:220 - loadIPPluginJar : add ltdc
+2026-04-24 00:03:08,432 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,433 [INFO] PluginManager:220 - loadIPPluginJar : add nvic
+2026-04-24 00:03:08,434 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,434 [INFO] PluginManager:220 - loadIPPluginJar : add fatfs
+2026-04-24 00:03:08,438 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,438 [INFO] PluginManager:220 - loadIPPluginJar : add linkedlist
+2026-04-24 00:03:08,441 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,441 [INFO] PluginManager:220 - loadIPPluginJar : add dma
+2026-04-24 00:03:08,443 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,443 [INFO] PluginManager:220 - loadIPPluginJar : add fmc
+2026-04-24 00:03:08,444 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,445 [INFO] PluginManager:220 - loadIPPluginJar : add i2s
+2026-04-24 00:03:08,445 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,446 [INFO] PluginManager:220 - loadIPPluginJar : add ucpd
+2026-04-24 00:03:08,447 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,447 [INFO] PluginManager:220 - loadIPPluginJar : add lorawan
+2026-04-24 00:03:08,448 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,449 [INFO] PluginManager:220 - loadIPPluginJar : add opamp
+2026-04-24 00:03:08,450 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,450 [INFO] PluginManager:220 - loadIPPluginJar : add i3c
+2026-04-24 00:03:08,451 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,452 [INFO] PluginManager:220 - loadIPPluginJar : add touchsensing
+2026-04-24 00:03:08,453 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,453 [INFO] PluginManager:220 - loadIPPluginJar : add i2c
+2026-04-24 00:03:08,454 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,455 [INFO] PluginManager:220 - loadIPPluginJar : add resmgrutility
+2026-04-24 00:03:08,456 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,456 [INFO] PluginManager:220 - loadIPPluginJar : add sai
+2026-04-24 00:03:08,459 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2026-04-24 00:03:08,459 [INFO] PluginManager:220 - loadIPPluginJar : add usbx
+2026-04-24 00:03:08,587 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:08,637 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2026-04-24 00:03:08,648 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2026-04-24 00:03:08,661 [INFO] CADModel:165 - CPN selected for project level
+2026-04-24 00:03:08,661 [INFO] CADModel:114 - Register for checkConnection events
+2026-04-24 00:03:08,661 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:08,661 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
+2026-04-24 00:03:09,166 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,167 [INFO] CADModel:165 - CPN selected for project level
+2026-04-24 00:03:09,167 [INFO] CADModel:114 - Register for checkConnection events
+2026-04-24 00:03:09,167 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,167 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
+2026-04-24 00:03:09,169 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,347 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,355 [INFO] DbMcusAds:53 - JSON generation date=Thu Sep 30 12:25:09 IST 2021 (1632984909247)
+2026-04-24 00:03:09,356 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,412 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
+2026-04-24 00:03:09,480 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,481 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,481 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,481 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
+2026-04-24 00:03:09,484 [FATAL] Updater:351 - Updater called before beeing initialized
+2026-04-24 00:03:09,539 [ERROR] Updater:1198 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2026-04-24 00:03:09,546 [INFO] Updater:1134 - Updater Version found : 6.15.0
+2026-04-24 00:03:09,557 [INFO] ApplicationProperties:184 - Using Application install path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.15.0.202507011659
+2026-04-24 00:03:09,842 [INFO] MainUpdater:2872 - connection check result : 22
+2026-04-24 00:03:09,842 [INFO] MainUpdater:289 - Updater Check For Update Now.
+2026-04-24 00:03:09,842 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.150
+2026-04-24 00:03:09,850 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
+2026-04-24 00:03:09,851 [INFO] UserAuth:171 - activating auth plugin
+2026-04-24 00:03:09,863 [INFO] UserAuth:487 - Internet connection configuration mode: 2
+2026-04-24 00:03:09,886 [INFO] UserAuth:487 - Internet connection configuration mode: 2
+2026-04-24 00:03:10,107 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
+2026-04-24 00:03:11,052 [INFO] ThirdParty:978 - Integrity check success = true
+2026-04-24 00:03:11,053 [INFO] IntegrityCheckThread:100 - exiting critical section [integrity check]
+2026-04-24 00:03:11,053 [INFO] IntegrityCheckThread:103 - End integrity checks thread
+2026-04-24 00:03:56,792 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:56,837 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:03:56,880 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:04:35,503 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:04:35,550 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:04:35,651 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:26:32,464 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:26:32,512 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2026-04-24 00:26:32,558 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
