@@ -502,7 +502,7 @@ void bootloader_handle_getcid_cmd(uint8_t *pbl_rx_buffer){
 
 
 }
-void bootloader_handle_getrdp_cmd(uint8_t *pbl_rx_buffer){
+void bootloader_handle_getrdp_cmd(uint8_t *pBuffer){
 	//command_code for this is 0x54
 	//should return the flash Read Protection level (1 Byte).
 	//refer the pics on phone to get this , TDS concept use chat gpt to understand about read protection level

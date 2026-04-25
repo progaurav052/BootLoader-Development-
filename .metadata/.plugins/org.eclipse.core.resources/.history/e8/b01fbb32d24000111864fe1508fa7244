@@ -502,49 +502,10 @@ void bootloader_handle_getcid_cmd(uint8_t *pbl_rx_buffer){
 
 
 }
-void bootloader_handle_getrdp_cmd(uint8_t *pbl_rx_buffer){
-	//command_code for this is 0x54
-	//should return the flash Read Protection level (1 Byte).
-	//refer the pics on phone to get this , TDS concept use chat gpt to understand about read protection level
-
-	uint8_t rdp_level;
-	// total length of command packet
-	uint32_t command_packet_len = pbl_rx_buffer[0]+1;
-
-	//extract the CRC32 sent by the host , move the pointer and extract value pattern
-	uint32_t host_crc = *((uint32_t*)(pbl_rx_buffer+command_packet_len-4)); /// i have made it to point to 4 bytes , and than derefenced , keep this pattern in mind
-	printmsg("BL_DEBUG_MSG : bootloader_handle_getver_cmd\n");
-	if(! bootloader_verify_crc(&pbl_rx_buffer[0],command_packet_len-4,host_crc)) // ==> returns 0 CRC is good , else if 1 CRC is bad
-	{
-		// for crc cal we need data over which we need to cal crc , len => for traversal over data , and host_crc
-		// being sent as parameter
-
-
-		printmsg("BL_DEBUG_MSG: checksum success !!\n");
-		//checksum is correct ..
-	    bootloader_send_ack(pbl_rx_buffer[1],1); // send ACK
-		 //obtain reply
-	    rdp_level=get_rdp_level_from_option_bytes();
-        //printmsg("BL_DEBUG_MSG:BL_VER :%d %x\n",bl_version,bl_version); //print using debug usart , usart3
-		bootloader_uart_write_data(&rdp_level,1); // send bootloader data back to host
-
-
-	}
-	else
-	{
-		printmsg("BL_DEBUG_MSG: checksum failed !!\n");
-		//checksum is wrong sen nack
-		bootloader_send_nack();
-
-	}
-
-
+void bootloader_handle_getrdp_cmd(uint8_t *pBuffer){
 
 }
 void bootloader_handle_go_cmd(uint8_t *pBuffer){
-	// command code for this is 0x54
-	//should return success or error coe (1 byte)
-	// this command is used to jump bootloader to specified address
 
 }
 void bootloader_handle_flash_erase_cmd(uint8_t *pBuffer){
@@ -672,11 +633,6 @@ uint16_t get_mcu_chip_id(void) {
   cid = (uint16_t)(DBGMCU->IDCODE) & 0x0FFF;
   return  cid;
 
-}
-
-uint8_t get_rdp_level_from_option_bytes(void)
-{
-	return (uint8_t)(((*((uint32_t*)0x1FFFC000) & (0xFF << 8)))>>8);
 }
 
 

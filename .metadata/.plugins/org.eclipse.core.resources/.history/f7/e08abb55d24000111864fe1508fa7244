@@ -502,7 +502,7 @@ void bootloader_handle_getcid_cmd(uint8_t *pbl_rx_buffer){
 
 
 }
-void bootloader_handle_getrdp_cmd(uint8_t *pbl_rx_buffer){
+void bootloader_handle_getrdp_cmd(uint8_t *pBuffer){
 	//command_code for this is 0x54
 	//should return the flash Read Protection level (1 Byte).
 	//refer the pics on phone to get this , TDS concept use chat gpt to understand about read protection level
@@ -522,11 +522,11 @@ void bootloader_handle_getrdp_cmd(uint8_t *pbl_rx_buffer){
 
 		printmsg("BL_DEBUG_MSG: checksum success !!\n");
 		//checksum is correct ..
-	    bootloader_send_ack(pbl_rx_buffer[1],1); // send ACK
+	    bootloader_send_ack(pbl_rx_buffer[1],2); // send ACK
 		 //obtain reply
-	    rdp_level=get_rdp_level_from_option_bytes();
+	    mcu_cid=get_mcu_chip_id();
         //printmsg("BL_DEBUG_MSG:BL_VER :%d %x\n",bl_version,bl_version); //print using debug usart , usart3
-		bootloader_uart_write_data(&rdp_level,1); // send bootloader data back to host
+		bootloader_uart_write_data((uint8_t*)&mcu_cid,2); // send bootloader data back to host
 
 
 	}
@@ -672,11 +672,6 @@ uint16_t get_mcu_chip_id(void) {
   cid = (uint16_t)(DBGMCU->IDCODE) & 0x0FFF;
   return  cid;
 
-}
-
-uint8_t get_rdp_level_from_option_bytes(void)
-{
-	return (uint8_t)(((*((uint32_t*)0x1FFFC000) & (0xFF << 8)))>>8);
 }
 
 
