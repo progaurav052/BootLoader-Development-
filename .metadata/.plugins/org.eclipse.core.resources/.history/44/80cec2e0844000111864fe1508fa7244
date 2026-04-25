@@ -396,15 +396,13 @@ void bootloader_handle_getver_cmd(uint8_t *pbl_rx_buffer)
 	// total length of command packet
 	uint32_t command_packet_len = pbl_rx_buffer[0]+1;
 
-	//extract the CRC32 sent by the host , move the pointer and extract value pattern
+	//extract the CRC32 sent by the host
 	uint32_t host_crc = *((uint32_t*)(pbl_rx_buffer+command_packet_len-4)); /// i have made it to point to 4 bytes , and than derefenced , keep this pattern in mind
 	printmsg("BL_DEBUG_MSG : bootloader_handle_getver_cmd\n");
 	if(! bootloader_verify_crc(&pbl_rx_buffer[0],command_packet_len-4,host_crc)) // ==> returns 0 CRC is good , else if 1 CRC is bad
 	{
 		// for crc cal we need data over which we need to cal crc , len => for traversal over data , and host_crc
 		// being sent as parameter
-
-
 		printmsg("BL_DEBUG_MSG: checksum success !!\n");
 		//checksum is correct ..
 		bootloader_send_ack(pBuffer[0],1); // send ACK

@@ -310,33 +310,20 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-
-/*
- * our cutsom Bootloader code flow chart
- *
- * Reset MCU -> [Inits : HAL ->gpio->UARTx->CRC->clock] -> <if user button is pressed>:
- *
- * if yes : bootloader_usart_read_data()
- * if no : bootloader_jump_to_user_app()
- *
- *
- * */
-
 void  bootloader_uart_read_data(void) {
   uint8_t rcv_len=0;
 
-  while(1) { // polling for usart_data
+  while(1) {
     memset(bl_rx_buffer,0,200);
     //here we will read and decode the commands coming from host
     //first read only one byte from the host , which is the "length" field of the command packet
-    HAL_UART_Receive(C_UART,bl_rx_buffer,1,HAL_MAX_DELAY); // polling is done here , to recieve command packet
+    HAL_UART_Receive(C_UART,bl_rx_buffer,1,HAL_MAX_DELAY);
     rcv_len= bl_rx_buffer[0];
-    HAL_UART_Receive(C_UART,&bl_rx_buffer[1],rcv_len,HAL_MAX_DELAY); // than read those many bytes , if length byte is received ,m read those many bytes
+    HAL_UART_Receive(C_UART,&bl_rx_buffer[1],rcv_len,HAL_MAX_DELAY); // than read those many bytes
 
-    // decoding the received command
     switch ( bl_rx_buffer[1] ) {
       case BL_GET_VER:
-          bootloader_handle_getver_cmd(bl_rx_buffer); //individual handle command
+          bootloader_handle_getver_cmd(bl_rx_buffer);
           break;
       case BL_GET_HELP:
           bootloader_handle_gethelp_cmd(bl_rx_buffer);
@@ -380,72 +367,6 @@ void  bootloader_uart_read_data(void) {
 }
 
 
-
-/******************* implementation of boot-loader command Handle functions **********************/
-
-void bootloader_handle_getver_cmd(uint8_t *pbl_rx_buffer)
-{
-
-	// refer the flow chart
-	// this is handle fucntion
-	uint8_t bl_version;
-	//1. verify the checksum
-
-	// we verify the CRC over len and command code portion of the packet
-	// len is 1 byte , command code is also 1 byte ==> 2bytes , CRC is of 4 bytes sent by host (CRC value)
-	// total length of command packet
-	uint32_t command_packet_len = pbl_rx_buffer[0]+1;
-
-	//extract the CRC32 sent by the host , move the pointer and extract value pattern
-	uint32_t host_crc = *((uint32_t*)(pbl_rx_buffer+command_packet_len-4)); /// i have made it to point to 4 bytes , and than derefenced , keep this pattern in mind
-	printmsg("BL_DEBUG_MSG : bootloader_handle_getver_cmd\n");
-	if(! bootloader_verify_crc(&pbl_rx_buffer[0],command_packet_len-4,host_crc)) // ==> returns 0 CRC is good , else if 1 CRC is bad
-	{
-		// for crc cal we need data over which we need to cal crc , len => for traversal over data , and host_crc
-		// being sent as parameter
-
-
-		printmsg("BL_DEBUG_MSG: checksum success !!\n");
-		//checksum is correct ..
-		bootloader_send_ack(pBuffer[0],1); // send ACK
-		bl_version= get_bootloader_version(); //obtain reply
-		printmsg("BL_DEBUG_MSG:BL_VER :%d %x\n",b1_version,b1_version);
-		bootloader_uart_write_data(&bl_version,1); // send bootloader data back to host
-
-
-	}
-	else
-	{
-		printmsg("BL_DEBUG_MSG: checksum failed !!\n");
-		//checksum is wrong sen nack
-		bootloader_send_nack();
-
-	}
-
-}
-
-
-
-/* ACK AND NACK implementation */
-void bootloader_send_ack(uint8_t command_code, uint8_t length_to_follow_reply_bytes)
-{
-	//ack reply will be of 2 bytes , ack byte + lentgh to follow in BL reply (could be status or anything )
-	uint8_t ack_reply[2];
-
-	ack_reply[0]=BL_ACK_BYTE;
-	ack_reply[1]=length_to_follow_reply_bytes;
-
-	HAL_UART_Transmit(&huart2, ack_reply, 2, HAL_MAX_DELAY);
-
-
-}
-void bootloader_send_nack()
-{
-	//nack reply will be just 1 nack byte , no question of sending reply if CRC fails , just send NACK byte
-	uint8_t nack_reply;
-	nack_reply=BL_NACK_BYTE;
-	HAL_UART_Transmit(&huart2, &nack_reply,1, HAL_MAX_DELAY);
-}
 void bootloader_jump_to_user_app(void) {
 
   //just a function pointer to hold the address of the reset handler of the user app.

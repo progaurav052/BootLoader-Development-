@@ -94,11 +94,6 @@ void bootloader_handle_read_sector_protection_status(uint8_t *pBuffer);
 void bootloader_handle_read_otp(uint8_t *pBuffer);
 void bootloader_handle_dis_rw_protect(uint8_t *pBuffer);
 
-void bootloader_send_nack();
-void bootloader_send_ack(uint8_t command_code, uint8_t length_to_follow_reply_bytes);
-
-
-
 
 #define BL_ACK_BYTE  		0xA5
 #define BL_NACK_BYTE 		0x7F
