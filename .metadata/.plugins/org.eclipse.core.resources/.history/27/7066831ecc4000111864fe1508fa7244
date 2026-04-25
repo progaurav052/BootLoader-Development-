@@ -464,9 +464,6 @@ void bootloader_handle_gethelp_cmd(uint8_t *pbl_rx_buffer){
 }
 void bootloader_handle_getcid_cmd(uint8_t *pbl_rx_buffer){
 
-
-	        // handle to get the mcu cid
-	        //chip identification number
 	        uint16_t mcu_cid;
 
 			// total length of command packet
@@ -483,12 +480,10 @@ void bootloader_handle_getcid_cmd(uint8_t *pbl_rx_buffer){
 
 				printmsg("BL_DEBUG_MSG: checksum success !!\n");
 				//checksum is correct ..
-				bootloader_send_ack(pbl_rx_buffer[1],2); // send ACK
-			     //obtain reply
-                mcu_cid=get_mcu_chip_id();
-
+				bootloader_send_ack(pbl_rx_buffer[1],10); // send ACK
+			     //obtain reply --> all supported command codes
 				//printmsg("BL_DEBUG_MSG:BL_VER :%d %x\n",bl_version,bl_version); //print using debug usart , usart3
-				bootloader_uart_write_data((uint8_t*)&mcu_cid,2); // send bootloader data back to host
+				bootloader_uart_write_data((uint8_t*)mcu_cid,2); // send bootloader data back to host
 
 
 			}
@@ -615,23 +610,6 @@ void bootloader_jump_to_user_app(void) {
 
   //3. jump to reset handler of the user application
   app_reset_handler();
-
-}
-
-//Read the chip identifier or device Identifier
-uint16_t get_mcu_chip_id(void) {
-
-/*
-  The STM32F446xx MCUs integrate an MCU ID code. This ID identifies the ST MCU partnumber
-  and the die revision. It is part of the DBG_MCU component and is mapped on the
-  external PPB bus (see Section 33.16 on page 1304). This code is accessible using the
-  JTAG debug pCat.2ort (4 to 5 pins) or the SW debug port (two pins) or by the user software.
-  It is even accessible while the MCU is under system reset. */
-
-  //register: DBGMCU_IDCODE
-  uint16_t cid;
-  cid = (uint16_t)(DBGMCU->IDCODE) & 0x0FFF;
-  return  cid;
 
 }
 

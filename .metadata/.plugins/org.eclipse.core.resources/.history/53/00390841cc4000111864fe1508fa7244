@@ -488,7 +488,7 @@ void bootloader_handle_getcid_cmd(uint8_t *pbl_rx_buffer){
                 mcu_cid=get_mcu_chip_id();
 
 				//printmsg("BL_DEBUG_MSG:BL_VER :%d %x\n",bl_version,bl_version); //print using debug usart , usart3
-				bootloader_uart_write_data((uint8_t*)&mcu_cid,2); // send bootloader data back to host
+				bootloader_uart_write_data((uint8_t*)mcu_cid,2); // send bootloader data back to host
 
 
 			}
@@ -627,8 +627,6 @@ uint16_t get_mcu_chip_id(void) {
   external PPB bus (see Section 33.16 on page 1304). This code is accessible using the
   JTAG debug pCat.2ort (4 to 5 pins) or the SW debug port (two pins) or by the user software.
   It is even accessible while the MCU is under system reset. */
-
-  //register: DBGMCU_IDCODE
   uint16_t cid;
   cid = (uint16_t)(DBGMCU->IDCODE) & 0x0FFF;
   return  cid;

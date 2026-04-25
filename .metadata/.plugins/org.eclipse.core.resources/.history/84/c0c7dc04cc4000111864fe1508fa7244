@@ -98,7 +98,6 @@ void bootloader_handle_dis_rw_protect(uint8_t *pBuffer);
 void bootloader_send_nack();
 void bootloader_send_ack(uint8_t command_code, uint8_t length_to_follow_reply_bytes);
 uint8_t get_bootloader_version(void);
-uint16_t get_mcu_chip_id(void);
 
 
 
