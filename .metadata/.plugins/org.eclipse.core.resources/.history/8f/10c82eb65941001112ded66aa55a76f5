@@ -541,7 +541,7 @@ void bootloader_handle_getrdp_cmd(uint8_t *pbl_rx_buffer){
 
 
 }
-void bootloader_handle_go_cmd(uint8_t *pbl_rx_buffer){
+void bootloader_handle_go_cmd(uint8_t *pBuffer){
 	// command code for this is 0x54
 	//should return success or error coe (1 byte)
 	// this command is used to jump bootloader to specified address
@@ -552,19 +552,19 @@ void bootloader_handle_go_cmd(uint8_t *pbl_rx_buffer){
 	  printmsg("BL_DEBUG_MSG:bootloader_handle_go_cmd\n");
 
 	  //Total length of the command packet
-	  uint32_t command_packet_len = pbl_rx_buffer[0]+1 ;
+	  uint32_t command_packet_len = bl_rx_buffer[0]+1 ;
 
 	  //extract the CRC32 sent by the Host
-	  uint32_t host_crc = *((uint32_t * ) (pbl_rx_buffer+command_packet_len - 4) ) ;
+	  uint32_t host_crc = *((uint32_t * ) (bl_rx_buffer+command_packet_len - 4) ) ;
 
-	  if (! bootloader_verify_crc(&pbl_rx_buffer[0],command_packet_len-4,host_crc)) {
+	  if (! bootloader_verify_crc(&bl_rx_buffer[0],command_packet_len-4,host_crc)) {
 
 	    printmsg("BL_DEBUG_MSG:checksum success !!\n");
 
-	    bootloader_send_ack(pbl_rx_buffer[1],1);
+	    bootloader_send_ack(pBuffer[0],1);
 
 	    //extract the go address
-	    go_address = *((uint32_t *)&pbl_rx_buffer[2] );
+	    go_address = *((uint32_t *)&pBuffer[2] );
 	    printmsg("BL_DEBUG_MSG:GO addr: %#x\n",go_address);
 
 	  if( verify_address(go_address) == ADDR_VALID ) {
@@ -603,66 +603,17 @@ void bootloader_handle_go_cmd(uint8_t *pbl_rx_buffer){
 
 
 }
-void bootloader_handle_flash_erase_cmd(uint8_t *pbl_rx_buffer){
+void bootloader_handle_flash_erase_cmd(uint8_t *pBuffer){
 	// the usecase of this command is to do an mass erase / sector eise erase
 	// please refer the coomand details
 	// erase means making everything as FF
 	// in flash if we want to write something make it 0xff first ... than do
-	// we will be uisng flash control drivers for this
 	// erase and program operations sequence
 
-	// return success or 1 error 1 byte
-
-	/* sector erase */
 	// check that no flash memory operation is on going by checking the BSY bit in FLASH_SR
 	// set the SER bit and select the sector out of 7 sectors in the main memory block you wish to erase (SNB) in the flash_CR register
 	// set the STRT bit in the flash_CR register
 	// wait for the BSY bit to be cleared
-
-	/* Mass erase */
-
-	// we will be uisng flash control drivers for this --> keeps above procedure in mind
-
-	/*
-	 * To perform Mass erase, the following sequence is recommended:
-		1. Check that no flash memory operation is ongoing by checking the BSY bit in the
-		FLASH_SR register
-		2. 3. 4. Set the MER bit in the FLASH_CR register
-		Set the STRT bit in the FLASH_CR register
-		Wait for the BSY bit to be cleared.
-	 * */
-
-	  uint8_t erase_status = 0x00;
-	  printmsg("BL_DEBUG_MSG:bootloader_handle_flash_erase_cmd\n");
-
-	  //Total length of the command packet
-	  uint32_t command_packet_len = bl_rx_buffer[0]+1 ;
-
-	  //extract the CRC32 sent by the Host
-	  uint32_t host_crc = *((uint32_t * ) (bl_rx_buffer+command_packet_len - 4) ) ;
-
-	  if (! bootloader_verify_crc(&bl_rx_buffer[0],command_packet_len-4,host_crc)) {
-
-	    printmsg("BL_DEBUG_MSG:checksum success !!\n");
-	    bootloader_send_ack(pBuffer[0],1);
-	    printmsg("BL_DEBUG_MSG:initial_sector : %d  no_ofsectors: %d\n",pBuffer[2],pBuffer[3]);
-
-	    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin,1);
-	    // below fucntion does the flashErase_init structure filling based on parameters 2, 3 and also calls the flashErase function , note : we need to unlock the flash registers before configuring them as part of flash erase func()
-	    // this fucntion also returns
-	    erase_status = execute_flash_erase(pBuffer[2] , pBuffer[3]);
-	    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin,0);
-
-	    printmsg("BL_DEBUG_MSG: flash erase status: %#x\n",erase_status);
-
-	    bootloader_uart_write_data(&erase_status,1);
-
-	  } else {
-
-	    printmsg("BL_DEBUG_MSG:checksum fail !!\n");
-	    bootloader_send_nack();
-	  }
-
 
 
 
@@ -825,45 +776,6 @@ uint8_t verify_address(uint32_t go_address) {
     return ADDR_INVALID;
 }
 
-uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector) {
-
-  //we have totally 8 sectors in STM32F446RE mcu .. sector[0 to 7]
-  //number_of_sector has to be in the range of 0 to 7
-  // if sector_number = 0xff , that means mass erase !
-  //Code needs to modified if your MCU supports more flash sectors
-  FLASH_EraseInitTypeDef flashErase_handle;
-  uint32_t sectorError;
-  HAL_StatusTypeDef status;
-
-
-  if( number_of_sector > 8 )
-    return INVALID_SECTOR;
-
-  if( (sector_number == 0xff ) || (sector_number <= 7) ) {
-    if(sector_number == (uint8_t) 0xff) {
-    flashErase_handle.TypeErase = FLASH_TYPEERASE_MASSERASE;
-
-    } else {
-      /*Here we are just calculating how many sectors needs to erased */
-      uint8_t remanining_sector = 8 - sector_number;
-      if( number_of_sector > remanining_sector) {
-
-        number_of_sector = remanining_sector;
-      }
-      flashErase_handle.TypeErase = FLASH_TYPEERASE_SECTORS;
-      flashErase_handle.Sector = sector_number; // this is the initial sector
-      flashErase_handle.NbSectors = number_of_sector;
-    }
-    flashErase_handle.Banks = FLASH_BANK_1;
-
-    /*Get access to touch the flash registers */
-    HAL_FLASH_Unlock();
-    flashErase_handle.VoltageRange = FLASH_VOLTAGE_RANGE_3;  // our mcu will work on this voltage range
-    status = (uint8_t) HAL_FLASHEx_Erase(&flashErase_handle, &sectorError);
-    HAL_FLASH_Lock();
-
-    return status;
-  }
 
 /*printf formateed string to console over UART*/
 void printmsg(char *format,...)
