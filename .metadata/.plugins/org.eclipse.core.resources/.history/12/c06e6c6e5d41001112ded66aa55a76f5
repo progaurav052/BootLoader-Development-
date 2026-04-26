@@ -603,7 +603,7 @@ void bootloader_handle_go_cmd(uint8_t *pbl_rx_buffer){
 
 
 }
-void bootloader_handle_flash_erase_cmd(uint8_t *pBuffer){
+void bootloader_handle_flash_erase_cmd(uint8_t *pbuffer){
 	// the usecase of this command is to do an mass erase / sector eise erase
 	// please refer the coomand details
 	// erase means making everything as FF
@@ -864,9 +864,6 @@ uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector) {
 
     return status;
   }
-
-  return INVALID_SECTOR;
-}
 
 /*printf formateed string to console over UART*/
 void printmsg(char *format,...)

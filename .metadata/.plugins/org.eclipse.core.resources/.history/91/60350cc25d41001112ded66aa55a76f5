@@ -865,9 +865,6 @@ uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector) {
     return status;
   }
 
-  return INVALID_SECTOR;
-}
-
 /*printf formateed string to console over UART*/
 void printmsg(char *format,...)
 {
