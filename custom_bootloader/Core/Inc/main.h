@@ -102,7 +102,7 @@ uint16_t get_mcu_chip_id(void);
 uint8_t get_rdp_level_from_option_bytes(void);
 uint8_t verify_address(uint32_t go_address);
 uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector);
-
+uint8_t execute_mem_write(uint8_t *pBuffer,uint32_t mem_address,uint32_t len);
 
 
 

@@ -52,6 +52,12 @@ default.size.stdout \
 OBJDUMP_LIST += \
 BUTTON_INTERRUPT_TOOGLE_LED.list \
 
+OBJCOPY_HEX += \
+BUTTON_INTERRUPT_TOOGLE_LED.hex \
+
+OBJCOPY_BIN += \
+BUTTON_INTERRUPT_TOOGLE_LED.bin \
+
 
 # All Target
 all: main-build
@@ -75,12 +81,22 @@ BUTTON_INTERRUPT_TOOGLE_LED.list: $(EXECUTABLES) makefile objects.list $(OPTIONA
 	@echo 'Finished building: $@'
 	@echo ' '
 
+BUTTON_INTERRUPT_TOOGLE_LED.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "BUTTON_INTERRUPT_TOOGLE_LED.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+BUTTON_INTERRUPT_TOOGLE_LED.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "BUTTON_INTERRUPT_TOOGLE_LED.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) BUTTON_INTERRUPT_TOOGLE_LED.elf BUTTON_INTERRUPT_TOOGLE_LED.list BUTTON_INTERRUPT_TOOGLE_LED.map default.size.stdout
+	-$(RM) BUTTON_INTERRUPT_TOOGLE_LED.bin BUTTON_INTERRUPT_TOOGLE_LED.elf BUTTON_INTERRUPT_TOOGLE_LED.hex BUTTON_INTERRUPT_TOOGLE_LED.list BUTTON_INTERRUPT_TOOGLE_LED.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

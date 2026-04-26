@@ -1,10 +1,22 @@
-12:01:20 **** Incremental Build of configuration Debug for project BUTTON_INTERRUPT_TOOGLE_LED ****
+00:06:37 **** Incremental Build of configuration Debug for project BUTTON_INTERRUPT_TOOGLE_LED ****
 make -j10 all 
+arm-none-eabi-gcc -o "BUTTON_INTERRUPT_TOOGLE_LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/ggpai/Desktop/BOOTLOADER_PROJECT/BUTTON_INTERRUPT_TOOGLE_LED/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BUTTON_INTERRUPT_TOOGLE_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BUTTON_INTERRUPT_TOOGLE_LED.elf
+ 
 arm-none-eabi-size  BUTTON_INTERRUPT_TOOGLE_LED.elf 
+arm-none-eabi-objdump -h -S BUTTON_INTERRUPT_TOOGLE_LED.elf  > "BUTTON_INTERRUPT_TOOGLE_LED.list"
+arm-none-eabi-objcopy  -O ihex BUTTON_INTERRUPT_TOOGLE_LED.elf  "BUTTON_INTERRUPT_TOOGLE_LED.hex"
+arm-none-eabi-objcopy  -O binary BUTTON_INTERRUPT_TOOGLE_LED.elf  "BUTTON_INTERRUPT_TOOGLE_LED.bin"
    text	   data	    bss	    dec	    hex	filename
    9488	     16	   1648	  11152	   2b90	BUTTON_INTERRUPT_TOOGLE_LED.elf
 Finished building: default.size.stdout
  
+Finished building: BUTTON_INTERRUPT_TOOGLE_LED.list
+ 
+Finished building: BUTTON_INTERRUPT_TOOGLE_LED.hex
+Finished building: BUTTON_INTERRUPT_TOOGLE_LED.bin
+ 
+ 
 
-12:01:20 Build Finished. 0 errors, 0 warnings. (took 325ms)
+00:06:45 Build Finished. 0 errors, 0 warnings. (took 7s.667ms)
 

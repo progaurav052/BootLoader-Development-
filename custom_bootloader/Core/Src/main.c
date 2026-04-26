@@ -670,6 +670,47 @@ void bootloader_handle_flash_erase_cmd(uint8_t *pBuffer){
 }
 void bootloader_handle_mem_write_cmd(uint8_t *pBuffer){
 
+	//first crc checking is done as usual
+	uint8_t mem_write_status=ADDR_INVALID;
+	uint8_t payload_len;
+	uint32_t mem_address;
+
+
+
+	//Total length of the command packet
+	uint32_t command_packet_len = bl_rx_buffer[0]+1 ;
+
+	//extract the CRC32 sent by the Host
+	uint32_t host_crc = *((uint32_t * ) (bl_rx_buffer+command_packet_len - 4) ) ;
+    if (! bootloader_verify_crc(&bl_rx_buffer[0],command_packet_len-4,host_crc)) {
+    	printmsg("BL_DEBUG_MSG:checksum success !!\n");
+        bootloader_send_ack(pBuffer[0],1);
+        //once the crc is verified will extract the payload len and mem_address
+        payload_len=pBuffer[6];
+        mem_address=*((uint32_t*)(&pBuffer[2])); // make it pointer to 32 bytes first than extract that value , which is address
+       if(verify_address(mem_address)==ADDR_VALID)
+       {
+    	   printmsg("BL_DEBUG_MSG: valid mem write address\n");
+    	   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin,1);
+    	   mem_write_status=execute_mem_write(&pBuffer[7],mem_address,payload_len);
+    	   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin,0);
+    	   bootloader_uart_write_data(&mem_write_status, 1);
+
+       }
+       else
+       {
+    	   printmsg("BL_DEBUG_MSG: invalid mem write address\n");
+    	   bootloader_uart_write_data(&mem_write_status,1);
+       }
+
+
+    }
+    else
+    {
+    	  printmsg("BL_DEBUG_MSG:checksum fail !!\n");
+    	  bootloader_send_nack();
+    }
+
 }
 void bootloader_handle_en_rw_protect(uint8_t *pBuffer){
 
@@ -836,7 +877,7 @@ uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector) {
   HAL_StatusTypeDef status;
 
 
-  if( number_of_sector > 8 )
+  if( number_of_sector > 8 || sector_number < 0 || sector_number >7 || number_of_sector <0 )
     return INVALID_SECTOR;
 
   if( (sector_number == 0xff ) || (sector_number <= 7) ) {
@@ -851,6 +892,7 @@ uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector) {
         number_of_sector = remanining_sector;
       }
       flashErase_handle.TypeErase = FLASH_TYPEERASE_SECTORS;
+      //below params doesnt matter for mass erase
       flashErase_handle.Sector = sector_number; // this is the initial sector
       flashErase_handle.NbSectors = number_of_sector;
     }
@@ -866,6 +908,26 @@ uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector) {
   }
 
   return INVALID_SECTOR;
+}
+
+// currently this fucntion supports only writing to flash
+
+uint8_t execute_mem_write(uint8_t *pBuffer,uint32_t mem_address,uint32_t len)
+{
+	uint8_t status= HAL_OK;
+	//we have to unlock the flash to get control of registers
+
+	HAL_FLASH_Unlock();
+
+	for(uint32_t i=0;i<len;i++)
+	{
+		status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE,mem_address+i,pBuffer[i]);
+
+	}
+	HAL_FLASH_Lock();
+
+	return status;
+
 }
 
 /*printf formateed string to console over UART*/
