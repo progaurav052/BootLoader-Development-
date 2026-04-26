@@ -100,7 +100,6 @@ void bootloader_send_ack(uint8_t command_code, uint8_t length_to_follow_reply_by
 uint8_t get_bootloader_version(void);
 uint16_t get_mcu_chip_id(void);
 uint8_t get_rdp_level_from_option_bytes(void);
-uint8_t verify_address(uint32_t go_address);
 
 
 

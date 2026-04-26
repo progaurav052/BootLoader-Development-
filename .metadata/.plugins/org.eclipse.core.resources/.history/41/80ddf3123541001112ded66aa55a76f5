@@ -599,7 +599,7 @@ void bootloader_handle_go_cmd(uint8_t *pBuffer){
 	    bootloader_send_nack();
 
 	  }
-
+	}
 
 
 }
